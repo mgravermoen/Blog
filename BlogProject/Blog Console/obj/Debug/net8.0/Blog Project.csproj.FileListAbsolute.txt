@@ -53,3 +53,4 @@ C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Npgsql.dll
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.sourcelink.json

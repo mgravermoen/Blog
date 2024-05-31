@@ -13,18 +13,23 @@ namespace BlogProject
             _connectionString = config["AppConnectionString"];
         }
 
-        private void SendQuery(string query) {
+        private void SendQuery(string query, Post post) {
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
             using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("TITLE", post.Title);
+            cmd.Parameters.AddWithValue("BODY", post.Body);
+            cmd.Parameters.AddWithValue("AUTHOR", post.Author);
+            cmd.Parameters.AddWithValue("CREATED", post.Created);
+            cmd.Parameters.AddWithValue("KEYID", post.KeyID);
             cmd.ExecuteReader();
             conn.Close();
         }
 
         public void AddPost(Post post)
         {
-            string query = "INSERT INTO Posts (Title, Body, Author, Created) VALUES ('" + post.Title + "', '" + post.Body + "', '" + post.Author + "', '" + post.Created + "')";
-            SendQuery(query);
+            string query = "INSERT INTO Posts (Title, Body, Author, Created) VALUES (:TITLE, :BODY, :AUTHOR, :CREATED)";
+            SendQuery(query, post);
         }
 
         public List<Post> CreateList()
@@ -55,8 +60,13 @@ namespace BlogProject
 
         public void DeleteKey(int id)
         {
-            string query = "DELETE FROM Posts WHERE KeyID = " + id;
-            SendQuery(query);
+            string query = "DELETE FROM Posts WHERE KeyID = '" + id + "'";
+
+            using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
+            conn.Open();
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            cmd.ExecuteReader();
+            conn.Close();
         }
 
         public Post GetPost(int id)
@@ -83,9 +93,9 @@ namespace BlogProject
 
         public void UpdateKey(Post post)
         {
-            string query = "UPDATE Posts SET Body = '" + post.Body + "' WHERE KeyID = " + post.KeyID  + ";" + 
-                           " UPDATE Posts SET Created = '" + post.Created + "' WHERE KeyID = " + post.KeyID + ";";
-            SendQuery(query);
+            string query = "UPDATE Posts SET Body = :BODY WHERE KeyID = :KEYID;" + 
+                           " UPDATE Posts SET Created = :CREATED WHERE KeyID = :KEYID;";
+            SendQuery(query, post);
         }
     }
 }

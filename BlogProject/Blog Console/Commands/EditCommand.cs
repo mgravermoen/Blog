@@ -131,7 +131,7 @@ namespace BlogProject
                     Post newPost = new Post()
                     {
                         Title = post.Title,
-                        Body = newBody.Replace("!!", "\n"),
+                        Body = newBody.Replace(",", "00"),
                         KeyID = post.KeyID,
                         Author = post.Author
                     };

@@ -33,7 +33,7 @@ namespace BlogProject
                     Post post = _service.ReadPost(id);
                     _console.Write("\n" + post.Title + "\n\n" + post.Author);
                     _console.CursorLeft(_console.BufferWidth() / 4 - 20);
-                    _console.WriteLine(post.Created + "\n\n\n" + post.Body);
+                    _console.WriteLine(post.Created + "\n\n\n" + post.Body.Replace("!!", "\n").Replace("00", ","));
                     break;
                 }
                 catch (FormatException)

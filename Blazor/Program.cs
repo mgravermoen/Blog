@@ -1,6 +1,5 @@
 using BlogProject;
 using Blazor.Components;
-//using BlazorWebAppAuthentication.Components;
 using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,19 +11,21 @@ builder.Services
         .AddSingleton<IPostRepo, PostRepo>()
         .AddSingleton<IPostService, PostService>()
         .AddSingleton<IAccountRepo, AccountRepo>()
-        .AddSingleton<IAccountService, AccountService>();
+        .AddSingleton<IAccountService, AccountService>()
+        .AddSingleton<ICurrentUser, CurrentUser>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
         options.Cookie.Name = "authToken";
         options.LoginPath = "/";
-        options.Cookie.MaxAge = TimeSpan.FromMinutes(5);
+        options.Cookie.MaxAge = TimeSpan.FromHours(1);
         options.AccessDeniedPath = "/access-denied";
     });
 builder.Services.AddAuthorization();
 builder.Services.AddCascadingAuthenticationState();
 //builder.Services.AddHttpContextAccessor();
+
 
 var app = builder.Build();
 

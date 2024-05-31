@@ -28,7 +28,7 @@ public class WriteCommand : ICommand
         Post post = new Post()
         {
             Title = title,
-            Body = body.Replace("!!", "\n"),
+            Body = body.Replace(",", "00"),
             Created = DateTime.UtcNow,
             Author = author
         };

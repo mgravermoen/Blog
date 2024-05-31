@@ -14,14 +14,14 @@
         </div>
         <div class="layout">
             <InputText class="userInput" @bind-Value="model.Username"/>
-            <ValidationMessage For="() => model.Username" />
+            <ValidationMessage style="color: #191919; font-size: 30px; letter-spacing: -1px; font-weight: bold; text-align: center; text-decoration: underline; border: 2px solid #FF5C47; text-decoration-color: red; margin: 1px;" For="() => model.Username" />
         </div>
         <div class="layout">
             <label>Password</label>
         </div>
         <div class="layout">
             <InputText class="userInput" type="password" @bind-Value="model.Password" />
-            <ValidationMessage For="() => model.Password" />
+            <ValidationMessage style="color: #191919; font-size: 30px; letter-spacing: -1px; font-weight: bold; text-align: center; text-decoration: underline; border: 2px solid #FF5C47; text-decoration-color: red; margin: 1px;" For="() => model.Password" />
         </div>
         <br />
         <div class="layout">
@@ -53,11 +53,16 @@
     [Inject]
     IAccountService accountService { get; set; }
 
+    @* [Inject]
+    ICurrentUser currentUser { get; set; } *@
+
     private bool Error { get; set; }
     private string ErrorMessage { get; set; }
 
     protected override void OnInitialized() {
         Error = false;
+        @* currentUser.SetUser(context.User.Identity.Name);
+        Console.WriteLine(currentUser.GetUser()); *@
     }
 
     private async Task Authenticate()

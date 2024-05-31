@@ -18,17 +18,23 @@
     @foreach (Post post in posts)
     {
         <br />
-        <div class="postHover" @onclick="() => NavTest(post.KeyID)">
+        <div class="postHover" @onclick="() => Post(post.KeyID)">
             <h2>@post.Title</h2>
             <i>@post.Author wrote:</i><br />
-            @post.Body<br />
-            @* @if (post.Body.Length < 128)
+            @* @post.Body<br /> *@
+            @if (post.Body.Length < 128)
             {
                 @post.Body<br />
             } else {
-                string body = post.Body.Substring(0, 127) + "...";
+                int i;
+                char space = post.Body[127];
+                for (i = 127; space != ' '; i++)
+                {
+                    space = post.Body[i];
+                }
+                string body = post.Body.Substring(0, i) + "...";
                 @body<br />
-            } *@
+            }
             <i class="small">@post.Created UTC</i><br />
         </div>
         <br />
@@ -55,7 +61,7 @@
         posts = postService.ListTitles();
     }
 
-    private void NavTest(int id)
+    private void Post(int id)
     {
         nav.NavigateTo("/post/" + id);
         // log.LogInformation(postID.ToString());

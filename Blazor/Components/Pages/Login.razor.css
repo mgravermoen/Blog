@@ -20,7 +20,8 @@
     border: 2px solid #191919;
     background-color: #DFD0B8;
     width: 100%;
-    color: #414141
+    color: #414141;
+    outline: none;
 }
 
 ::deep .userInput:focus {

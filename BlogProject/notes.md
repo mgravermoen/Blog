@@ -1,3 +1,21 @@
+# 5/31
+
+Swap author field with already registered username
+
+Allow ' in posts in app
+
+Fix special characters, like , and \n, in console
+
+Don't allow ... to interupt words
+
+Make functionality invisible with different user roles instead of only showing the access denied page
+
+Fix multiple a tags on different pages appearing clicked
+
+Look into issue with claims and updating the username
+
+add functionality so admins can do anything
+
 # 5/30
 
 Append salt to the end of the password instead of the beginning

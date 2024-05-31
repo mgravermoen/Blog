@@ -147,7 +147,8 @@ main[b-m6llz47sqy] {
     border: 2px solid #191919;
     background-color: #DFD0B8;
     width: 100%;
-    color: #414141
+    color: #414141;
+    outline: none;
 }
 
 [b-1zyfdmve1i] .userInput:focus {
@@ -252,7 +253,8 @@ h2[b-597p367wi1] {
     border: 2px solid #191919;
     background-color: #DFD0B8;
     width: 100%;
-    color: #414141
+    color: #414141;
+    outline: none;
 }
 
 [b-9uab0auxzj] .userInput:focus {
@@ -376,6 +378,11 @@ h2[b-597p367wi1] {
 
 .delete[b-gzmrr08vbw] {
     width: 115px;
+}
+
+.block[b-gzmrr08vbw] {
+    background-color: #414141;
+    border: 2px solid #191919;
 }
 
 .error[b-gzmrr08vbw], .success[b-gzmrr08vbw] {

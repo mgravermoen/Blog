@@ -17,10 +17,6 @@
         <label class="width">
             Please enter your body:
             <textarea class="userInput bodyHeight" @bind="InputBody" />
-        </label><br /><br />
-        <label class="width">
-            Please enter your name:
-            <input class="userInput" @bind="InputAuthor" />
         </label>
     </div> <br />
 
@@ -56,9 +52,11 @@
     [Inject]
     NavigationManager nav { get; set; }
 
+    [Inject]
+    ICurrentUser currentUser { get; set; }
+
     private string InputTitle { get; set; }
     private string InputBody { get; set; }
-    private string InputAuthor { get; set; }
 
     private bool Error { get; set; }
     private string ErrorMessage { get; set; }
@@ -77,7 +75,7 @@
                 Title = InputTitle,
                 Body = InputBody,
                 Created = DateTime.UtcNow,
-                Author = InputAuthor
+                Author = currentUser.GetUser()
             };
             postService.StorePost(post);
 
@@ -96,11 +94,6 @@
             Error = true;
             ErrorMessage = "INVALID BODY - Please enter a valid body.";
         }
-        else if (InputAuthor == "" || String.IsNullOrWhiteSpace(InputAuthor))
-        {
-            Error = true;
-            ErrorMessage = "INVALID AUTHOR - Please enter a valid author.";
-        }
         else if (InputTitle.Length > 64)
         {
             Error = true;
@@ -110,11 +103,6 @@
         {
             Error = true;
             ErrorMessage = "INVALID BODY - A body must be 512 characters or shorter.";
-        }
-        else if (InputAuthor.Length > 32)
-        {
-            Error = true;
-            ErrorMessage = "INVALID AUTHOR - The author's name must be 32 characters or shorter.";
         }
         else
         {
