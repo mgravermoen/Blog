@@ -1,0 +1,93 @@
+@page "/"
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Authentication
+@using Microsoft.AspNetCore.Authentication.Cookies
+
+
+<PageTitle>Login</PageTitle>
+
+<div class="main">
+    <EditForm Model="@model" OnValidSubmit="Authenticate" FormName="LoginForm" autocomplete="off">
+        <DataAnnotationsValidator />
+        <div class="layout">
+            <label>Username</label> 
+        </div>
+        <div class="layout">
+            <InputText class="userInput" @bind-Value="model.Username"/>
+            <ValidationMessage For="() => model.Username" />
+        </div>
+        <div class="layout">
+            <label>Password</label>
+        </div>
+        <div class="layout">
+            <InputText class="userInput" type="password" @bind-Value="model.Password" />
+            <ValidationMessage For="() => model.Password" />
+        </div>
+        <br />
+        <div class="layout">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a href="/create-account" class="btn btn-primary create">Create New Account</a>
+        </div>
+    </EditForm>
+</div>
+
+@if (Error == true) 
+{
+    <br />
+    <div class="error">@ErrorMessage</div>
+}
+
+<br /><br />
+
+@code
+{
+    [Inject]
+    NavigationManager nav { get; set; }
+
+    [CascadingParameter]
+    public HttpContext context { get; set; }
+
+    [SupplyParameterFromForm]
+    public LoginModel model { get; set; } = new();
+
+    [Inject]
+    IAccountService accountService { get; set; }
+
+    private bool Error { get; set; }
+    private string ErrorMessage { get; set; }
+
+    protected override void OnInitialized() {
+        Error = false;
+    }
+
+    private async Task Authenticate()
+    {
+        bool doesUsernameExist = accountService.CheckUsername(model.Username);
+        if (!doesUsernameExist)
+        {
+            ErrorMessage = "INVALID USERNAME - That username doesn't exist.";
+            Error = true;
+        }
+        else
+        {
+            if (accountService.GetPassword(model.Username) != accountService.Hash(model.Username, model.Password))
+            {
+                ErrorMessage = "INVALID PASSWORD - That password doesn't match the provided username.";
+                Error = true;
+            }
+            else
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, model.Username),
+                    new Claim(ClaimTypes.Role, accountService.GetRole(model.Username))
+                };
+
+                var identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                await context.SignInAsync(principal);
+                nav.NavigateTo("/home");
+            }
+        }
+    }
+}

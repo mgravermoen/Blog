@@ -1,0 +1,55 @@
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.exe
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.deps.json
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.runtimeconfig.json
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.pdb
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfoInputs.cache
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfo.cs
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.csproj.CoreCompileInputs.cache
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\refint\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.pdb
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.genruntimeconfig.cache
+C:\Users\mgravermoen10105\Documents\Blog Project\Blog Console\obj\Debug\net8.0\ref\Blog Project.dll
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.exe
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.deps.json
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.runtimeconfig.json
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.dll
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\bin\Debug\net8.0\Blog Project.pdb
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfoInputs.cache
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfo.cs
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.csproj.CoreCompileInputs.cache
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.dll
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\refint\Blog Project.dll
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.pdb
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\Blog Project.genruntimeconfig.cache
+c:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blog Project\Blog Console\obj\Debug\net8.0\ref\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Blog Project.exe
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Blog Project.deps.json
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Blog Project.runtimeconfig.json
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Blog Project.pdb
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfoInputs.cache
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.AssemblyInfo.cs
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.csproj.CoreCompileInputs.cache
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\refint\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.pdb
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.genruntimeconfig.cache
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\ref\Blog Project.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Project.csproj.AssemblyReference.cache
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\obj\Debug\net8.0\Blog Pro.23CFC5A8.Up2Date
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Npgsql.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\BlogProject\Blog Console\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll

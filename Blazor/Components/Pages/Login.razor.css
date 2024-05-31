@@ -1,0 +1,48 @@
+.main {
+    color: #191919;
+    font-size: 20px;
+    letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.error {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+	font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    border: 2px solid #FF5C47;
+    text-decoration-color: red;
+}
+
+::deep .userInput {
+    border: 2px solid #191919;
+    background-color: #DFD0B8;
+    width: 100%;
+    color: #414141
+}
+
+::deep .userInput:focus {
+    outline: none;
+    border: 2px solid #FF5C47;
+}
+
+.btn {
+    height: 55px;
+    width: 185px;
+    margin: 3px;
+}
+
+.create {
+    flex-direction: column;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.layout {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+}

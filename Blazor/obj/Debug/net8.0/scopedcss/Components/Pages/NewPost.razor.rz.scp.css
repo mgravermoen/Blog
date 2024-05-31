@@ -1,0 +1,54 @@
+.main[b-s52w8bbzo6] {
+    color: #191919;
+    font-size: 20px;
+    letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.userInput[b-s52w8bbzo6] {
+    border: 2px solid #191919;
+    background-color: #DFD0B8;
+    width: 100%;
+    color: #414141
+}
+
+.userInput:focus[b-s52w8bbzo6] {
+    outline: none;
+    border: 2px solid #FF5C47;
+}
+
+.width[b-s52w8bbzo6] {
+    width: 100%;
+}
+
+.bodyHeight[b-s52w8bbzo6] {
+    height: 375px;
+    resize: none;
+    overflow: hidden;
+
+}
+
+.title[b-s52w8bbzo6] {
+    font-size: 70px;
+}
+
+.btn[b-s52w8bbzo6] {
+    height: 55px;
+    width: 105px;
+}
+
+.back[b-s52w8bbzo6] {
+    position: absolute;
+    right: 50px;
+}
+
+.error[b-s52w8bbzo6] {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+	font-weight: bold;
+    text-align: center;
+    border: 2px solid #FF5C47;
+    text-decoration: underline;
+    text-decoration-color: red;
+}

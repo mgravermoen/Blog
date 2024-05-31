@@ -1,0 +1,48 @@
+.main[b-1zyfdmve1i] {
+    color: #191919;
+    font-size: 20px;
+    letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.error[b-1zyfdmve1i] {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+	font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    border: 2px solid #FF5C47;
+    text-decoration-color: red;
+}
+
+[b-1zyfdmve1i] .userInput {
+    border: 2px solid #191919;
+    background-color: #DFD0B8;
+    width: 100%;
+    color: #414141
+}
+
+[b-1zyfdmve1i] .userInput:focus {
+    outline: none;
+    border: 2px solid #FF5C47;
+}
+
+.btn[b-1zyfdmve1i] {
+    height: 55px;
+    width: 185px;
+    margin: 3px;
+}
+
+.login[b-1zyfdmve1i] {
+    flex-direction: column;
+    justify-content: center;
+    display: inline-flex;
+}
+
+.layout[b-1zyfdmve1i] {
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    padding: 5px;
+}

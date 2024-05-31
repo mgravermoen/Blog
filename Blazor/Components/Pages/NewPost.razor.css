@@ -1,0 +1,54 @@
+.main {
+    color: #191919;
+    font-size: 20px;
+    letter-spacing: -1px;
+	font-weight: bold;
+}
+
+.userInput {
+    border: 2px solid #191919;
+    background-color: #DFD0B8;
+    width: 100%;
+    color: #414141
+}
+
+.userInput:focus {
+    outline: none;
+    border: 2px solid #FF5C47;
+}
+
+.width {
+    width: 100%;
+}
+
+.bodyHeight {
+    height: 375px;
+    resize: none;
+    overflow: hidden;
+
+}
+
+.title {
+    font-size: 70px;
+}
+
+.btn {
+    height: 55px;
+    width: 105px;
+}
+
+.back {
+    position: absolute;
+    right: 50px;
+}
+
+.error {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+	font-weight: bold;
+    text-align: center;
+    border: 2px solid #FF5C47;
+    text-decoration: underline;
+    text-decoration-color: red;
+}

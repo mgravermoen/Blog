@@ -1,0 +1,55 @@
+.main {
+	color: #414141;
+	font-size: 25px;
+	letter-spacing: -1px;
+    line-break: loose;
+}
+
+h2 {
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.homePageTitle {
+	font-family: Verdana;
+    color: #191919;
+	font-size: 50px;
+    line-height: 38px;
+	text-transform: uppercase;
+	letter-spacing: -8px;
+	font-weight: bold;
+}
+
+.postHover:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    transition: background-color 0.4s ease-out;
+}
+
+.postHover {
+    transition: background-color 0.4s ease-out;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    cursor: pointer;
+}
+
+.addPostContainer {
+    display: flex;
+}
+
+.small {
+    font-size: 15px;
+}
+
+.wrap {
+    line-break: auto;
+}
+
+.btn {
+    position: absolute;
+    margin: 25px;
+    top: 0;
+    right: 0;
+    height: 50px;
+    width: 130px;
+}

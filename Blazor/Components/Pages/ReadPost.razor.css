@@ -1,0 +1,58 @@
+.main {
+    color: #191919;
+    font-size: 20px;
+    letter-spacing: -2px;
+	font-weight: bold;
+}
+
+.homePageTitle {
+    font-size: 70px;
+}
+
+.textBody {
+    border: 2px solid #191919;
+    background-color: #DFD0B8;
+    color: #414141;
+    width: 100%;
+    height: 375px;
+    resize: none;
+    overflow: hidden;
+}
+
+.textBody:focus {
+    outline: none;
+    border: 2px solid #FF5C47;
+}
+
+.small {
+    font-size: 15px;
+}
+
+.btn {
+    height: 55px;
+    width: 105px;
+}
+
+.back {
+    position: absolute;
+    right: 50px;
+}
+
+.delete {
+    width: 115px;
+}
+
+.error, .success {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+	font-weight: bold;
+    text-align: center;
+    border: 2px solid #FF5C47;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.success {
+    text-decoration-color: green;
+}

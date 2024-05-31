@@ -1,0 +1,33 @@
+@page "/access-denied"
+@rendermode InteractiveServer
+
+<PageTitle>Access Denied</PageTitle>
+
+<div class="error">
+    Access Denied
+</div>
+
+<br />
+
+<div class="layout">
+    <button class="btn btn-primary" @onclick="Login">Return to Login</button>
+    <button class="btn btn-primary" @onclick="Home">Return to Home</button>
+</div>
+
+<br /><br />
+
+@code
+{
+    [Inject]
+    NavigationManager nav { get; set; }
+
+    private void Login()
+    {
+        nav.NavigateTo("/");
+    }
+
+    private void Home()
+    {
+        nav.NavigateTo("/home");
+    }
+}
