@@ -1,19 +1,7 @@
-.main[b-1zyfdmve1i] {
-    color: #191919;
-    font-size: 20px;
-    letter-spacing: -1px;
-	font-weight: bold;
-}
-
-.error[b-1zyfdmve1i] {
-    color: #191919;
-    font-size: 30px;
-    letter-spacing: -1px;
-	font-weight: bold;
-    text-align: center;
-    text-decoration: underline;
-    border: 2px solid #FF5C47;
-    text-decoration-color: red;
+.btn[b-1zyfdmve1i] {
+    height: 55px;
+    width: 185px;
+    margin: 3px;
 }
 
 [b-1zyfdmve1i] .userInput {
@@ -29,21 +17,14 @@
     border: 2px solid #FF5C47;
 }
 
-.btn[b-1zyfdmve1i] {
-    height: 55px;
-    width: 185px;
-    margin: 3px;
-}
-
-.login[b-1zyfdmve1i] {
-    flex-direction: column;
-    justify-content: center;
-    display: inline-flex;
-}
-
-.layout[b-1zyfdmve1i] {
-    margin: auto;
-    width: 50%;
+[b-1zyfdmve1i] .validation-message {
+    color: #191919;
+    font-size: 30px;
+    letter-spacing: -1px;
+    font-weight: bold;
     text-align: center;
-    padding: 5px;
+    text-decoration: underline;
+    border: 2px solid #FF5C47;
+    text-decoration-color: red;
+    margin: 1px;
 }

@@ -6,7 +6,7 @@
 <PageTitle>Read Posting</PageTitle>
 
 <div class="main">
-    <div class="homePageTitle">@post.Title</div>
+    <div class="title">@post.Title</div>
 
     <div>
         @post.Author<br />
@@ -14,7 +14,7 @@
         <i class="small">@post.Created UTC</i><br />
     </div>
     <br /><br />
-    @if (currentUser.GetUser() == post.Author)
+    @if (currentUser.GetUser() == post.Author || accountService.GetRole(currentUser.GetUser()) == "administrator")
     {
         <button class="btn btn-primary" @onclick="EditPost">Save
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 10 256 256">
@@ -32,7 +32,7 @@
     }
     else
     {
-        <button class="btn btn-primary block" @onclick="EditPost" disabled=true>Save
+        <button class="btn btn-primary block" disabled=true>Save
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="-10 10 256 256">
                 <g fill=currentColor>
                     <path d="M65.456 48.385c10.02 0 96.169-.355 96.169-.355 2.209-.009 5.593.749 7.563 1.693 0 0-1.283-1.379.517.485 1.613 1.67 35.572 36.71 36.236 37.416.665.707.241.332.241.332.924 2.007 1.539 5.48 1.539 7.691v95.612c0 7.083-8.478 16.618-16.575 16.618-8.098 0-118.535-.331-126.622-.331-8.087 0-16-6.27-16.356-16.1-.356-9.832.356-118.263.356-126.8 0-8.536 6.912-16.261 16.932-16.261zm-1.838 17.853.15 121c.003 2.198 1.8 4.003 4.012 4.015l120.562.638a3.971 3.971 0 0 0 4-3.981l-.143-90.364c-.001-1.098-.649-2.616-1.445-3.388L161.52 65.841c-.801-.776-1.443-.503-1.443.601v35.142c0 3.339-4.635 9.14-8.833 9.14H90.846c-4.6 0-9.56-4.714-9.56-9.14s-.014-35.14-.014-35.14c0-1.104-.892-2.01-1.992-2.023l-13.674-.155a1.968 1.968 0 0 0-1.988 1.972zm32.542.44v27.805c0 1.1.896 2.001 2 2.001h44.701c1.113 0 2-.896 2-2.001V66.679a2.004 2.004 0 0 0-2-2.002h-44.7c-1.114 0-2 .896-2 2.002z"/>
@@ -40,7 +40,7 @@
                 </g>
             </svg>
         </button>
-        <button class="btn btn-primary delete block" @onclick="DeletePost" disabled=true>Delete
+        <button class="btn btn-primary delete block" disabled=true>Delete
             <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="-3 4 48 48">
                 <path fill=currentColor d="M 24 4 C 20.491685 4 17.570396 6.6214322 17.080078 10 L 10.238281 10 A 1.50015 1.50015 0 0 0 9.9804688 9.9785156 A 1.50015 1.50015 0 0 0 9.7578125 10 L 6.5 10 A 1.50015 1.50015 0 1 0 6.5 13 L 8.6386719 13 L 11.15625 39.029297 C 11.427329 41.835926 13.811782 44 16.630859 44 L 31.367188 44 C 34.186411 44 36.570826 41.836168 36.841797 39.029297 L 39.361328 13 L 41.5 13 A 1.50015 1.50015 0 1 0 41.5 10 L 38.244141 10 A 1.50015 1.50015 0 0 0 37.763672 10 L 30.919922 10 C 30.429604 6.6214322 27.508315 4 24 4 z M 24 7 C 25.879156 7 27.420767 8.2681608 27.861328 10 L 20.138672 10 C 20.579233 8.2681608 22.120844 7 24 7 z M 11.650391 13 L 36.347656 13 L 33.855469 38.740234 C 33.730439 40.035363 32.667963 41 31.367188 41 L 16.630859 41 C 15.331937 41 14.267499 40.033606 14.142578 38.740234 L 11.650391 13 z M 20.476562 17.978516 A 1.50015 1.50015 0 0 0 19 19.5 L 19 34.5 A 1.50015 1.50015 0 1 0 22 34.5 L 22 19.5 A 1.50015 1.50015 0 0 0 20.476562 17.978516 z M 27.476562 17.978516 A 1.50015 1.50015 0 0 0 26 19.5 L 26 34.5 A 1.50015 1.50015 0 1 0 29 34.5 L 29 19.5 A 1.50015 1.50015 0 0 0 27.476562 17.978516 z"></path>
             </svg>
@@ -81,6 +81,9 @@
 
     [Inject]
     ICurrentUser currentUser { get; set; }
+
+    [Inject]
+    IAccountService accountService { get; set; }
 
     private Post post { get; set; }
     private string EditedBody { get; set; }

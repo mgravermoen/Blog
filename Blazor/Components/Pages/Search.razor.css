@@ -15,29 +15,15 @@
 	font-weight: bold;
 }
 
-.new {
+.back {
     position: absolute;
     margin: 25px;
     top: 0;
     right: 0;
-    height: 50px;
-    width: 130px;
+    height: 55px;
+    width: 105px;
 }
 
-.search {
-    width: 115px;
-}
-
-.searchContainer {
-    display: flex;
-}
-
-.searchButtonContainer {
-    width: 115px;
-    margin-right: 10px;
-    display: inline-flex;
-}
-
-.searchFieldContainer {
-    width: 100%;
+.center {
+    text-align: center;
 }

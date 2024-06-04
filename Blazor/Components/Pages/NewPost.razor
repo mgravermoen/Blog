@@ -53,7 +53,7 @@
     NavigationManager nav { get; set; }
 
     [Inject]
-    ICurrentUser currentUser { get; set; }
+    ICurrentUser user { get; set; }
 
     private string InputTitle { get; set; }
     private string InputBody { get; set; }
@@ -75,7 +75,7 @@
                 Title = InputTitle,
                 Body = InputBody,
                 Created = DateTime.UtcNow,
-                Author = currentUser.GetUser()
+                Author = user.GetUser()
             };
             postService.StorePost(post);
 

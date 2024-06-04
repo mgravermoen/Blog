@@ -74,5 +74,10 @@ namespace BlogProject
             inMemoryDatabase[post.KeyID] = post;
             SaveToCSV();
         }
+
+        public List<Post> CreateSearchedList(string searchTerm)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

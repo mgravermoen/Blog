@@ -8,6 +8,8 @@ namespace BlogProject
 
         public List<Post> CreateList();
 
+        public List<Post> CreateSearchedList(string searchTerm);
+
         public void DeleteKey(int id);
 
         public void UpdateKey(Post post);

@@ -7,6 +7,10 @@ namespace BlogProject
 
         public void SetUser(string username)
         {
+            if (String.IsNullOrWhiteSpace(username))
+            {
+                return;
+            }
             _username = username;
         }
 

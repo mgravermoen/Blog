@@ -61,3 +61,7 @@ build_metadata.AdditionalFiles.CssScope = b-s52w8bbzo6
 [C:/Users/mgravermoen10105/Documents/Karmak Blog Project/Blazor/Components/Pages/ReadPost.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZWFkUG9zdC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-gzmrr08vbw
+
+[C:/Users/mgravermoen10105/Documents/Karmak Blog Project/Blazor/Components/Pages/Search.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTZWFyY2gucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-e6z4iaxpje

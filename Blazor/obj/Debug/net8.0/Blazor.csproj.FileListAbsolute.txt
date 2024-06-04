@@ -47,3 +47,4 @@ C:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blazor\obj\Debug\net8.0\
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blazor\obj\Debug\net8.0\scopedcss\Components\Pages\AccessDenied.razor.rz.scp.css
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blazor\obj\Debug\net8.0\scopedcss\Components\Pages\CreateAccount.razor.rz.scp.css
 C:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blazor\obj\Debug\net8.0\Blazor.sourcelink.json
+C:\Users\mgravermoen10105\Documents\Karmak Blog Project\Blazor\obj\Debug\net8.0\scopedcss\Components\Pages\Search.razor.rz.scp.css

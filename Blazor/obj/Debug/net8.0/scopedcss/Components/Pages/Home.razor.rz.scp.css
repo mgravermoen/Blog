@@ -1,16 +1,11 @@
 .main[b-597p367wi1] {
 	color: #414141;
 	font-size: 25px;
-	letter-spacing: -1px;
     line-break: loose;
+    font-weight: normal;
 }
 
-h2[b-597p367wi1] {
-    font-weight: bold;
-    letter-spacing: -2px;
-}
-
-.homePageTitle[b-597p367wi1] {
+.title[b-597p367wi1] {
 	font-family: Verdana;
     color: #191919;
 	font-size: 50px;
@@ -20,36 +15,29 @@ h2[b-597p367wi1] {
 	font-weight: bold;
 }
 
-.postHover:hover[b-597p367wi1] {
-    background-color: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
-    transition: background-color 0.4s ease-out;
-}
-
-.postHover[b-597p367wi1] {
-    transition: background-color 0.4s ease-out;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0);
-    cursor: pointer;
-}
-
-.addPostContainer[b-597p367wi1] {
-    display: flex;
-}
-
-.small[b-597p367wi1] {
-    font-size: 15px;
-}
-
-.wrap[b-597p367wi1] {
-    line-break: auto;
-}
-
-.btn[b-597p367wi1] {
+.new[b-597p367wi1] {
     position: absolute;
     margin: 25px;
     top: 0;
     right: 0;
     height: 50px;
     width: 130px;
+}
+
+.search[b-597p367wi1] {
+    width: 115px;
+}
+
+.searchContainer[b-597p367wi1] {
+    display: flex;
+}
+
+.searchButtonContainer[b-597p367wi1] {
+    width: 115px;
+    margin-right: 10px;
+    display: inline-flex;
+}
+
+.searchFieldContainer[b-597p367wi1] {
+    width: 100%;
 }

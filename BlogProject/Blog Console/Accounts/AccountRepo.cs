@@ -13,57 +13,50 @@ namespace BlogProject
             _connectionString = config["AppConnectionString"];
         }
 
-        public bool CheckUsername(string username)
+        public dynamic ReturnVariableQuery(string query, string username)
         {
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
-            string query = "SELECT EXISTS (SELECT 1 FROM accounts WHERE username = '" + username + "')";
             using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("USERNAME", username);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
-            return bool.Parse(reader[0].ToString());
+            var returnVar = reader[0].ToString();
+            conn.Close();
+            return returnVar;
+        }
+
+        public bool CheckUsername(string username)
+        {
+            return bool.Parse(ReturnVariableQuery("SELECT EXISTS (SELECT 1 FROM accounts WHERE username = :USERNAME)", username));
         }
 
         public string GetPassword(string username)
         {
-            using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
-            conn.Open();
-            string query = "SELECT hash FROM accounts WHERE username = '" + username + "'";
-            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-            NpgsqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            return reader[0].ToString();
+            return ReturnVariableQuery("SELECT hash FROM accounts WHERE username = :USERNAME", username);
         }
 
         public string GetRole(string username)
         {
-            using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
-            conn.Open();
-            string query = "SELECT role FROM accounts WHERE username = '" + username + "'";
-            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-            NpgsqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            return reader[0].ToString();
+            return ReturnVariableQuery("SELECT role FROM accounts WHERE username = :USERNAME", username);
         }
 
         public string GetSalt(string username)
         {
-            using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
-            conn.Open();
-            string query = "SELECT salt FROM accounts WHERE username = '" + username + "'";
-            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
-            NpgsqlDataReader reader = cmd.ExecuteReader();
-            reader.Read();
-            return reader[0].ToString();
+            return ReturnVariableQuery("SELECT salt FROM accounts WHERE username = :USERNAME", username);
         }
 
         public void StoreAccount(string username, string hash, string salt)
         {
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
-            string query = "INSERT INTO accounts (username, hash, salt, role) VALUES ('" + username + "', '" + hash + "', '" + salt + "', 'user')";
+            string query = "INSERT INTO accounts (username, hash, salt, role) VALUES (:USERNAME, :HASH, :SALT, 'user')";
             using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("USERNAME", username);
+            cmd.Parameters.AddWithValue("HASH", hash);
+            cmd.Parameters.AddWithValue("SALT", salt);
             cmd.ExecuteReader();
+            conn.Close();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace BlogProject
             _connectionString = config["AppConnectionString"];
         }
 
-        private void SendQuery(string query, Post post) {
+        private void VoidQuery(string query, Post post) {
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
             using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
@@ -26,20 +26,14 @@ namespace BlogProject
             conn.Close();
         }
 
-        public void AddPost(Post post)
-        {
-            string query = "INSERT INTO Posts (Title, Body, Author, Created) VALUES (:TITLE, :BODY, :AUTHOR, :CREATED)";
-            SendQuery(query, post);
-        }
-
-        public List<Post> CreateList()
+        private List<Post> ListQuery(string query, string searchTerm = "")
         {
             List<Post> posts = new List<Post>();
 
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
-            string query = "SELECT * FROM Posts";
             using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("SEARCHTERM", "%" + searchTerm + "%");
             NpgsqlDataReader reader = cmd.ExecuteReader();
             while(reader.Read()) 
             {
@@ -58,13 +52,27 @@ namespace BlogProject
             return posts;
         }
 
+        public void AddPost(Post post)
+        {
+            VoidQuery("INSERT INTO Posts (Title, Body, Author, Created) VALUES (:TITLE, :BODY, :AUTHOR, :CREATED)", post);
+        }
+
+        public List<Post> CreateList()
+        {
+            return ListQuery("SELECT * FROM Posts");
+        }
+
+        public List<Post> CreateSearchedList(string searchTerm)
+        {
+            return ListQuery("SELECT * FROM posts WHERE title ILIKE :SEARCHTERM", searchTerm);
+        }
+
         public void DeleteKey(int id)
         {
-            string query = "DELETE FROM Posts WHERE KeyID = '" + id + "'";
-
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
-            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand("DELETE FROM Posts WHERE KeyID = :ID", conn);
+            cmd.Parameters.AddWithValue("ID", id);
             cmd.ExecuteReader();
             conn.Close();
         }
@@ -73,8 +81,8 @@ namespace BlogProject
         {
             using NpgsqlConnection conn = new NpgsqlConnection(_connectionString);
             conn.Open();
-            string query = "SELECT * FROM Posts WHERE KeyID = " + id;
-            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM Posts WHERE KeyID = :ID", conn);
+            cmd.Parameters.AddWithValue("ID", id);
             NpgsqlDataReader reader = cmd.ExecuteReader();
             reader.Read();
             Post post = new Post()
@@ -93,9 +101,8 @@ namespace BlogProject
 
         public void UpdateKey(Post post)
         {
-            string query = "UPDATE Posts SET Body = :BODY WHERE KeyID = :KEYID;" + 
-                           " UPDATE Posts SET Created = :CREATED WHERE KeyID = :KEYID;";
-            SendQuery(query, post);
+            VoidQuery("UPDATE Posts SET Body = :BODY WHERE KeyID = :KEYID;" + 
+                      " UPDATE Posts SET Created = :CREATED WHERE KeyID = :KEYID;", post);
         }
     }
 }

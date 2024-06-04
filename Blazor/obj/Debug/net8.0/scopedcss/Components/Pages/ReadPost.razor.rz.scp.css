@@ -1,12 +1,5 @@
 .main[b-gzmrr08vbw] {
-    color: #191919;
-    font-size: 20px;
     letter-spacing: -2px;
-	font-weight: bold;
-}
-
-.homePageTitle[b-gzmrr08vbw] {
-    font-size: 70px;
 }
 
 .textBody[b-gzmrr08vbw] {
@@ -24,18 +17,9 @@
     border: 2px solid #FF5C47;
 }
 
-.small[b-gzmrr08vbw] {
-    font-size: 15px;
-}
-
 .btn[b-gzmrr08vbw] {
     height: 55px;
     width: 105px;
-}
-
-.back[b-gzmrr08vbw] {
-    position: absolute;
-    right: 50px;
 }
 
 .delete[b-gzmrr08vbw] {
@@ -45,17 +29,6 @@
 .block[b-gzmrr08vbw] {
     background-color: #414141;
     border: 2px solid #191919;
-}
-
-.error[b-gzmrr08vbw], .success[b-gzmrr08vbw] {
-    color: #191919;
-    font-size: 30px;
-    letter-spacing: -1px;
-	font-weight: bold;
-    text-align: center;
-    border: 2px solid #FF5C47;
-    text-decoration: underline;
-    text-decoration-color: red;
 }
 
 .success[b-gzmrr08vbw] {

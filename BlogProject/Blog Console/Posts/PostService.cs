@@ -26,6 +26,11 @@ namespace BlogProject
             return _repo.CreateList();
         }
 
+        public List<Post> ListSearchedTitles(string searchTerm)
+        {
+            return _repo.CreateSearchedList(searchTerm);
+        }
+
         public void DeletePost(int id)
         {
             _repo.DeleteKey(id);

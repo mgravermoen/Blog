@@ -6,14 +6,32 @@
 <PageTitle>Home</PageTitle>
 
 <div class="main">
-    <div class="addPostContainer">
-        <div class="homePageTitle">BLOG POST</div>
-        <button class="btn btn-primary" @onclick="NewPost">New Post
-            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 5 72 72">
-                <path fill=currentColor d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M44,39	c1.657,0,3-1.343,3-3c0-1.657-1.343-3-3-3c-0.329,0-2.426,0-5,0c0-2.574,0-4.672,0-5c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3	c0,0.328,0,2.426,0,5c-2.574,0-4.671,0-5,0c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3c0.329,0,2.426,0,5,0c0,2.574,0,4.672,0,5	c0,1.657,1.343,3,3,3c1.657,0,3-1.343,3-3c0-0.328,0-2.426,0-5C41.574,39,43.671,39,44,39z"></path>
-            </svg>
-        </button>
+    <div class="title">BLOG POST</div>
+    <button class="btn btn-primary new" @onclick="NewPost">New Post
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 5 72 72">
+            <path fill=currentColor d="M36,12c13.255,0,24,10.745,24,24c0,13.255-10.745,24-24,24S12,49.255,12,36C12,22.745,22.745,12,36,12z M44,39	c1.657,0,3-1.343,3-3c0-1.657-1.343-3-3-3c-0.329,0-2.426,0-5,0c0-2.574,0-4.672,0-5c0-1.657-1.343-3-3-3c-1.657,0-3,1.343-3,3	c0,0.328,0,2.426,0,5c-2.574,0-4.671,0-5,0c-1.657,0-3,1.343-3,3c0,1.657,1.343,3,3,3c0.329,0,2.426,0,5,0c0,2.574,0,4.672,0,5	c0,1.657,1.343,3,3,3c1.657,0,3-1.343,3-3c0-0.328,0-2.426,0-5C41.574,39,43.671,39,44,39z"></path>
+        </svg>
+    </button>
+
+    <br />
+    <div class="searchContainer">
+        <div class="searchButtonContainer">
+            <button class="btn btn-primary search" @onclick="() => Search(searchTerm)">Search
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="-4 7 72 72">
+                    <path fill=currentColor d="M 31 11 C 19.973 11 11 19.973 11 31 C 11 42.027 19.973 51 31 51 C 34.974166 51 38.672385 49.821569 41.789062 47.814453 L 54.726562 60.751953 C 56.390563 62.415953 59.088953 62.415953 60.751953 60.751953 C 62.415953 59.087953 62.415953 56.390563 60.751953 54.726562 L 47.814453 41.789062 C 49.821569 38.672385 51 34.974166 51 31 C 51 19.973 42.027 11 31 11 z M 31 19 C 37.616 19 43 24.384 43 31 C 43 37.616 37.616 43 31 43 C 24.384 43 19 37.616 19 31 C 19 24.384 24.384 19 31 19 z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="searchFieldContainer">
+            <input class="userInput" @bind="searchTerm" />
+        </div>
     </div>
+
+    @if (Error == true) 
+    {
+        <br />
+        <div class="error">@ErrorMessage</div>
+    }
 
     @foreach (Post post in posts)
     {
@@ -21,7 +39,6 @@
         <div class="postHover" @onclick="() => Post(post.KeyID)">
             <h2>@post.Title</h2>
             <i>@post.Author wrote:</i><br />
-            @* @post.Body<br /> *@
             @if (post.Body.Length < 128)
             {
                 @post.Body<br />
@@ -42,8 +59,6 @@
 </div>
 <br />
 
-
-
 @code 
 {
     [Inject]
@@ -52,19 +67,22 @@
     [Inject]
     NavigationManager nav { get; set; }
 
-    @* [Inject]
-    ILogger<Home> log { get; set; } *@
-
     private List<Post> posts;
+
+    private string searchTerm;
+
+    private bool Error { get; set; }
+
+    private string ErrorMessage { get; set; }
 
     protected override void OnInitialized() {
         posts = postService.ListTitles();
+        Error = false;
     }
 
     private void Post(int id)
     {
         nav.NavigateTo("/post/" + id);
-        // log.LogInformation(postID.ToString());
     }
 
     private void NewPost()
@@ -72,4 +90,21 @@
         nav.NavigateTo("/new");
     }
 
+    private void Search(string searchTerm)
+    {
+        if (searchTerm == "" || String.IsNullOrWhiteSpace(searchTerm))
+        {
+            Error = true;
+            ErrorMessage = "INVALID SEARCH QUERY - Please enter a valid query.";
+        }
+        else if (searchTerm.Length > 64)
+        {
+            Error = true;
+            ErrorMessage = "INVALID SEARCH QUERY - A query must be 64 characters or shorter.";
+        }
+        else
+        {
+            nav.NavigateTo("/search/" + searchTerm);
+        }
+    }
 }

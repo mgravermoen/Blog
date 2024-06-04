@@ -13,28 +13,30 @@
         </div>
         <div class="layout">
             <InputText class="userInput" @bind-Value="model.Username"/>
-             <ValidationMessage style="color: #191919; font-size: 30px; letter-spacing: -1px; font-weight: bold; text-align: center; text-decoration: underline; border: 2px solid #FF5C47; text-decoration-color: red; margin: 1px;" For="() => model.Username" />
+             <ValidationMessage For="() => model.Username" />
         </div>
         <div class="layout">
             <label>Password</label>
         </div>
         <div class="layout">
             <InputText class="userInput" type="password" @bind-Value="model.Password" />
-            <ValidationMessage style="color: #191919; font-size: 30px; letter-spacing: -1px; font-weight: bold; text-align: center; text-decoration: underline; border: 2px solid #FF5C47; text-decoration-color: red; margin: 1px;" For="() => model.Password" />
+            <ValidationMessage For="() => model.Password" />
         </div>
         <div class="layout">
             <label>Confirm Password</label>
         </div>
         <div class="layout">
             <InputText class="userInput" type="password" @bind-Value="model.ConfirmPassword" />
-            <ValidationMessage style="color: #191919; font-size: 30px; letter-spacing: -1px; font-weight: bold; text-align: center; text-decoration: underline; border: 2px solid #FF5C47; text-decoration-color: red; margin: 1px;" For="() => model.ConfirmPassword" />
+            <ValidationMessage For="() => model.ConfirmPassword" />
         </div>
         <br />
         <div class="layout">
             <button class="btn btn-primary" type="submit">Create Account</button>
-            <a href="/" class="btn btn-primary login">Return to Login</a>
         </div>
     </EditForm>
+    <div class="layout">
+        <a href="/" class="btn btn-primary flexCenter">Return to Login</a>
+    </div>
 </div>
 
 @if (Error == true) 

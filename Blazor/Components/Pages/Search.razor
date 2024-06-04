@@ -1,0 +1,76 @@
+@page "/search/{searchTerm}"
+@rendermode InteractiveServer
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "administrator,user")]
+
+<PageTitle>@searchTerm</PageTitle>
+
+<div class="main">
+    <div class="title">BLOG POST</div>
+    <button class="btn btn-primary back" @onclick="Home">Home
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="-2 2 24 24">
+            <path fill=currentColor d="M 12 2.0996094 L 1 12 L 4 12 L 4 21 L 11 21 L 11 15 L 13 15 L 13 21 L 20 21 L 20 12 L 23 12 L 12 2.0996094 z M 12 4.7910156 L 18 10.191406 L 18 11 L 18 19 L 15 19 L 15 13 L 9 13 L 9 19 L 6 19 L 6 10.191406 L 12 4.7910156 z"></path>
+        </svg>
+    </button>
+
+    @if (posts.Count == 0)
+    {
+        <br />
+        <div class="center">
+            No titles found with the query "@searchTerm"
+        </div>
+    }
+    @foreach (Post post in posts)
+    {
+        <br />
+        <div class="postHover" @onclick="() => Post(post.KeyID)">
+            <h2>@post.Title</h2>
+            <i>@post.Author wrote:</i><br />
+            @if (post.Body.Length < 128)
+            {
+                @post.Body<br />
+            } else {
+                int i;
+                char space = post.Body[127];
+                for (i = 127; space != ' '; i++)
+                {
+                    space = post.Body[i];
+                }
+                string body = post.Body.Substring(0, i) + "...";
+                @body<br />
+            }
+            <i class="small">@post.Created UTC</i><br />
+        </div>
+        <br />
+    }
+</div>
+<br />
+
+
+@code 
+{
+    [Parameter]
+    public string searchTerm { get; set; }
+
+    [Inject]
+    NavigationManager nav { get; set; }
+
+    [Inject]
+    IPostService postService { get; set; }
+
+    private List<Post> posts;
+
+    protected override void OnInitialized() {
+        posts = postService.ListSearchedTitles(searchTerm);
+    }
+
+    private void Post(int id)
+    {
+        nav.NavigateTo("/post/" + id);
+    }
+
+    private void Home()
+    {
+        nav.NavigateTo("/home");
+    }
+}

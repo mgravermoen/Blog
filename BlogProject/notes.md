@@ -1,3 +1,27 @@
+# 6/4
+
+Refactor repos
+
+Clean up css
+
+Add error checking for search bar (specifically, push it with parameters)
+
+# 6/3
+
+Fix multiple a tags on different pages appearing clicked
+
+Look into issue with claims and updating the username
+
+add functionality so admins can do anything
+
+Add search bar to search through all titles
+
+Refactor repos
+
+Clean up css
+
+Add error checking for search bar (specifically, push it with parameters)
+
 # 5/31
 
 Swap author field with already registered username

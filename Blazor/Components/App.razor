@@ -18,3 +18,15 @@
 </body>
 
 </html>
+
+@code{
+    [CascadingParameter]
+    HttpContext context { get; set; }
+
+    [Inject]
+    ICurrentUser user { get; set; }
+
+    protected override void OnInitialized() {
+        user.SetUser(context.User.Identity.Name);
+    }
+}
